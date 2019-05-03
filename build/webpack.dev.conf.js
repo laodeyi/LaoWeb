@@ -43,9 +43,6 @@ const devWebpackConfig = merge(baseWebpackConfig, {
         target: 'http://localhost:8880/',
         secure: false,
         changeOrigin: true,
-        // pathRewrite: {
-        //   '^/yummy': '/'
-        // }
       }
       },
     quiet: true, // necessary for FriendlyErrorsPlugin
@@ -75,7 +72,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       }
     ])
   ]
-})
+});
 
 module.exports = new Promise((resolve, reject) => {
   portfinder.basePort = process.env.PORT || config.dev.port

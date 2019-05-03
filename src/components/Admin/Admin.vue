@@ -1,8 +1,10 @@
+<!-- @format -->
+
 <template>
   <div id="admin-part">
     <b-navbar id="admin-nav" type="dark" toggleable="lg">
-      <b-navbar-brand :to="{name: 'adminApply'}">
-        <img src="" alt=""/>
+      <b-navbar-brand :to="{ name: 'adminApply' }">
+        <img src="" alt="" />
         Yummy!
       </b-navbar-brand>
 
@@ -10,9 +12,9 @@
 
       <b-collapse is-nav id="nav_collapse">
         <b-navbar-nav>
-          <b-nav-item :to="{name: 'adminApply'}">Applies</b-nav-item>
-          <b-nav-item :to="{name: 'adminSetting'}">Settings</b-nav-item>
-          <b-nav-item :to="{name: 'adminStat'}">Stat</b-nav-item>
+          <b-nav-item :to="{ name: 'adminApply' }">Applies</b-nav-item>
+          <b-nav-item :to="{ name: 'adminSetting' }">Settings</b-nav-item>
+          <b-nav-item :to="{ name: 'adminStat' }">Stat</b-nav-item>
         </b-navbar-nav>
 
         <b-navbar-nav id="admin-nav-text">
@@ -21,10 +23,11 @@
 
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto">
-
           <b-nav-item-dropdown right>
             <!-- Using button-content slot -->
-            <template slot="button-content"><em>Account</em></template>
+            <template slot="button-content"
+              ><em>Account</em></template
+            >
             <b-dropdown-item @click="signOut">SignOut</b-dropdown-item>
           </b-nav-item-dropdown>
         </b-navbar-nav>
@@ -37,47 +40,40 @@
 </template>
 
 <script>
-    export default {
-        name: "Admin",
-      data() {
-        return {
-
-        }
-      },
-      created(){
-
-      },
-      computed:{
-
-      },
-      methods:{
-        signOut(){
-          alert('Sign out !');
-          this.$store.dispatch('setUser',null);
-          this.$store.dispatch('setToken',null);
-          this.$router.push({name: 'adminLogin'});
-        }
-      }
+export default {
+  name: "Admin",
+  data() {
+    return {};
+  },
+  created() {},
+  computed: {},
+  methods: {
+    signOut() {
+      alert("Sign out !");
+      this.$store.dispatch("setUser", null);
+      this.$store.dispatch("setToken", null);
+      this.$router.push({ name: "adminLogin" });
     }
+  }
+};
 </script>
 
 <style scoped>
-  #admin-nav{
-    background-color: #268c6a;
+#admin-nav {
+  background-color: #268c6a;
+}
+#admin-nav-text {
+  margin-left: 32%;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 0;
+}
 
-  }
-  #admin-nav-text{
-    margin-left: 32%;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 0;
-  }
-
-  #admin-main{
-    margin-top: 1%;
-    width: 100%;
-    height: auto;
-    min-height: 550px;
-    color: darkslategrey;
-  }
+#admin-main {
+  margin-top: 1%;
+  width: 100%;
+  height: auto;
+  min-height: 550px;
+  color: darkslategrey;
+}
 </style>

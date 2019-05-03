@@ -1,3 +1,5 @@
+<!-- @format -->
+
 <template>
   <div id="welcome">
     <label>Welcome</label>
@@ -6,28 +8,28 @@
 </template>
 
 <script>
-    import PieChart from "../Charts/PieChart";
-    export default {
-      name: "Welcome",
-      components: {PieChart},
-      data(){
-        return{
-          data:{
-            labels: ['VueJs', 'EmberJs', 'ReactJs', 'AngularJs'],
-            datasets: [
-              {
-                data: [40, 20, 80, 10]
-              }
-            ]
+import PieChart from "../Charts/PieChart";
+export default {
+  name: "Welcome",
+  components: { PieChart },
+  data() {
+    return {
+      data: {
+        labels: ["VueJs", "EmberJs", "ReactJs", "AngularJs"],
+        datasets: [
+          {
+            data: [40, 20, 80, 10]
           }
-        }
+        ]
       }
-    }
+    };
+  }
+};
 </script>
 
 <style scoped>
-  #user-pie{
-    width: 200px;
-    height: 200px;
-  }
+#user-pie {
+  width: 200px;
+  height: 200px;
+}
 </style>
